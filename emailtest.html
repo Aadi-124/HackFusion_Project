@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="name" id="name" placeholder="name"><br>
+    <input type="email" name="email" id="email" placeholder="email"><br>
+    <input type="text" name="sub" id="sub" placeholder="sub"><br>
+    <input type="text" name="msg" id="msg" placeholder="msg"><br>
+    <button name="btn" id="btn">end</button>
+    
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+        var btn = document.getElementById('btn');
+
+        btn.addEventListener('click',function(e){
+            e.preventDefault();
+            console.log("hii");
+        })
+
+
+        var name = document.getElementById('name');
+        var email = document.getElementById('email');
+        var sub = document.getElementById('sub');
+        var msg = document.getElementById('msg');
+    </script>
+    
+</body>
+</html>

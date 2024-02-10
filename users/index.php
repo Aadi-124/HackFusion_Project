@@ -13,9 +13,17 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Media</title>
     <!-- IconScout CDN -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+    <!-- <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css"> -->
     <!-- Stylesheet -->
     <link rel="stylesheet" href="./style.css">
+
+    <style>
+        .post{
+            width:9cm;
+            height:3cm;
+            font-size:2cm;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -134,15 +142,9 @@ session_start();
             <!----------------- MIDDLE -------------------->
             <div class="middle">
                  <!--  -->
-                <!----------------- END OF STORIES -------------------->
-                <form action="create-post.php" enctype="multipart/form-data" class="create-post">
-                    <div class="profile-photo">
-                        <img src="./images/profile-1.jpg">
-                    </div>
-                    <input type="text" placeholder="What's on your mind, Diana ?" name="post-text" id="create-post">
-                    <input type="file" name="post-file" id="create-post">
-                    <input type="submit" name="submit-post" value="Post" class="btn btn-primary">
-                </form>
+
+                    <a type="button" value="POST" class="btn btn-primary" href="./createpost.php">post</a>
+
                 <!----------------- FEEDS -------------------->
                 <div class="feeds">
                     <!----------------- FEED 1 -------------------->
