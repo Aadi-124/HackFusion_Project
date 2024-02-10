@@ -7,7 +7,7 @@
         $password = $_POST['password'];
 
         include("config/connection.php");
-        $query = "select RegNo, fullname, password, role, email FROM users WHERE email = '$email' AND password='$password'";
+        $query = "select RegNo, fullname, password, role, email FROM users WHERE accountstatus='ACTIVE' AND email = '$email' AND password='$password';";
         
         $result = mysqli_query($connect, $query);
 
@@ -22,7 +22,7 @@
                 $admin_pass = $row['password'];
             }
             mysqli_close($connect);
-            if(strtoupper($admin_role) == 'ADMIN')
+            if(strtoupper($admin_role) == 'STUDENT' || strtoupper($admin_role) == 'FACULTY')
             {
                 $_SESSION['admin_auth'] = true;
                 $_SESSION['auth_admin'] = [

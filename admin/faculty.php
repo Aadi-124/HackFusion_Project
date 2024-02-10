@@ -31,7 +31,7 @@ include("includes/sidebar.php");
           <?php include("message.php"); ?>
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Student</h3>
+                <h3 class="card-title">Faculty</h3>
                 </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -47,7 +47,7 @@ include("includes/sidebar.php");
                     <?php
                     $i = 1;
                       include("config/connection.php");
-                      $query = "select users.RegNo, users.fullname, department.deptname, users.accountstatus FROM users inner join department on users.deptno = department.id WHERE users.accountstatus = 'DEACTIVE' and users.role='STUDENT'";
+                      $query = "select users.RegNo, users.fullname, department.deptname, users.accountstatus FROM users inner join department on users.deptno = department.id WHERE users.accountstatus = 'DEACTIVE' and users.role='FACULTY'";
                       
                       $result = mysqli_query($connect, $query);
                       if(mysqli_num_rows($result) > 0)
@@ -59,13 +59,15 @@ include("includes/sidebar.php");
                     <tr>
                       <td class="text-center"><?php echo $i++; ?></td>
                       <td class="text"><?php echo $row['RegNo']; ?></td>
-                      <td class="text"><?php echo $row['fullname']; ?></td>
+                      <td class="text"><?php echo "Prof. ".$row['fullname']; ?></td>
                       <td class="text"><?php echo $row['deptname']; ?></td>
                       <td align="center">
                         <button type="button" class="btn btn-flat btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">Action
                           <span class="sr-only">Toggle Dropdown</span></button>
                             <div class="dropdown-menu" role="menu">
-                              <a class="dropdown-item view_data" href="student-profile.php?id=<?php echo $row['RegNo'] ?>&page=studprof" data-id ="<?php echo $row['RegNo'] ?>&page=studprof"><span class="fa fa-eye text-dark"></span> View</a>
+                              <a class="dropdown-item view_data" href="faculty-profile.php?id=<?php echo $row['RegNo'] ?>" data-id ="<?php echo $row['RegNo'] ?>&page=studprof"><span class="fa fa-eye text-dark"></span> View</a>
+                              <div class="dropdown-divider"></div>
+                              <button type="button" value="<?php echo $row['RegNo'] ?>" class="dropdown-item delete_data"><span class="fa fa-trash text-danger"></span> Delete</button>
                             </div>
                       </td>
 						        </tr>

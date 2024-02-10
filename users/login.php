@@ -13,7 +13,7 @@ if(isset($_SESSION['admin_auth']))
 
 <div class="login-box">
   <div class="login-logo">
-    <b>Admin Login</b>
+    <b>Users Login</b>
   </div>
   <?php
             if(isset($_SESSION['auth_status']))
@@ -68,6 +68,9 @@ if(isset($_SESSION['admin_auth']))
 
       <p class="mb-1">
         <a href="forgot-password.php">I forgot my password</a>
+      </p>
+      <p class="mb-0">
+        <a href="register.php" class="text-center">Register a new membership</a>
       </p>
     </div>
     <!-- /.login-card-body -->

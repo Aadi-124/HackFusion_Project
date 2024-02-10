@@ -23,7 +23,7 @@
               />
             </div>
             <div class="info">
-              <a href="#" class="d-block">Alexander Pierce</a>
+              <a href="#" class="d-block">Adminitrative Login</a>
             </div>
           </div>
 
@@ -89,8 +89,8 @@
             </ul>
     </li>
     <li class="nav-item">
-            <a href="dashboard.php" class="nav-link">
-            <i class="fas fa-user nav-icon"></i>
+            <a href="notice.php" class="nav-link">
+            <i class="nav-icon fas fa-edit"></i>
               <p>
                 Notice
 
